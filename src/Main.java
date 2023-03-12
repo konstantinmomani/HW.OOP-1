@@ -42,6 +42,13 @@ public class Main {
         chang.compare(belby);
         harry.compare(finchFletchley);
         weasley.compare(montague);
+//        Эксперементы с классом GryffindorStudents
+//        System.out.println("========================================================================================");
+//        GryffindorStudents students = new GryffindorStudents();
+//        students.print();
+//        students.featuresSum();
+//        students.best();
+
 
     }
 

@@ -1,30 +1,40 @@
+import java.util.Random;
+
 public class GryffindorStudents {
-//    private Gryffindor[] gryffindors;
-//    Gryffindor harry = new Gryffindor("Harry", "Potter", 33,
-//            34, 22, 21, 78);
-//    Gryffindor granger = new Gryffindor("Hermione", "Granger", 33,
-//            41, 16, 45, 89);
-//    Gryffindor weasley = new Gryffindor("Ron", "Weasley", 55,
-//            12, 32, 10, 65);
-//    public GryffindorStudents() {
-//        var r = new Random();
-//        gryffindors = new Gryffindor[] {harry, granger, weasley};
+    private static Gryffindor[] gryffindors;
+    Gryffindor gryffindor;
 
+    public GryffindorStudents() {
+        var r = new Random();
+        Gryffindor student1 = new Gryffindor("Har", "Pot", r.nextInt(101),
+                r.nextInt(101), r.nextInt(101), r.nextInt(101), r.nextInt(101));
+        Gryffindor student2 = new Gryffindor("Hermi", "Gran", r.nextInt(101),
+                r.nextInt(101), r.nextInt(101), r.nextInt(101), r.nextInt(101));
+        Gryffindor student3 = new Gryffindor("Ro", "Weas", r.nextInt(101),
+                r.nextInt(101), r.nextInt(101), r.nextInt(101), r.nextInt(101));
+        gryffindors = new Gryffindor[]{student1,student2,student3};
+    }
 
-//    public void print() {
-//        for (Gryffindor gryffindor : gryffindors) {
-//            System.out.println(gryffindor);
-//        }
-//    }
+    public void print() {
+        for (Gryffindor gryffindor : gryffindors) {
+            System.out.println(gryffindor);
+        }
+    }
+    public void featuresSum() {
+        int value = 0;
+        for (Gryffindor gryffindor : gryffindors) {
+            value = gryffindor.getCourage() + gryffindor.getNobility() + gryffindor.getHonor();
+            System.out.println(gryffindor.getName() + " has features value: " + value);
+        }
+    }
 
-
-//    public static void best(Gryffindor[] gryffindors) {
-//        Gryffindor maxFeatures = null;
-//        for (Gryffindor student : gryffindors) {
-//            if(maxFeatures == null || gryffindors.featuresValue() > maxFeatures.featuresValue()) {
-//                maxFeatures = gryffindors;
-//            }
-//        }
-//        System.out.println(maxFeatures.getName());
-//    }
+    public void best() {
+        Gryffindor maxFeatures = null;
+        for (Gryffindor student : gryffindors) {
+            if(maxFeatures == null || student.featuresValue() > maxFeatures.featuresValue()) {
+                maxFeatures = student;
+            }
+        }
+        System.out.println(maxFeatures.getName() + " is the best student!");
+    }
 }
