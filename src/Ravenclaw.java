@@ -10,16 +10,35 @@ public class Ravenclaw extends Hogwarts {
         this.wisdom = wisdom;
         this.creativity = creativity;
     }
+    public int getIntelligence() { return intelligence; }
 
-    public int getIntelligence() {
-        return intelligence;
-    }
-
-    public int getWisdom() {
-        return wisdom;
-    }
+    public int getWisdom() { return wisdom; }
 
     public int getCreativity() {
         return creativity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " +
+                "Intelligence: " + intelligence + " " +
+                "Wisdom: " + wisdom + " " +
+                "Creativity: " + creativity;
+    }
+    public int featuresValue() {
+        return intelligence + wisdom + creativity;
+    }
+    public void compare(Ravenclaw student) {
+        int sum1 = featuresValue();
+        int sum2 = student.featuresValue();
+        if (sum1 > sum2) {
+            System.out.println(getName() + " " + getSurname() + " лучший Когтевранец, чем "
+                    + student.getName() + " " + student.getSurname());
+        } else if (sum2 > sum1) {
+            System.out.println(student.getName() + " " + student.getSurname() + " лучший Когтевранец, чем "
+                    + getName() + " " + getSurname());
+        } else {
+            System.out.println("Студенты равны");
+        }
     }
 }

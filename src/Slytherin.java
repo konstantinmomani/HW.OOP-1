@@ -34,4 +34,30 @@ public class Slytherin extends Hogwarts {
     public int getThirstForPower() {
         return thirstForPower;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " +
+                "Trickery: " + trickery + " " +
+                "Determination: " + determination + " " +
+                "Ambition: " + ambition + " " +
+                "Resourcefulness: " + resourcefulness + " " +
+                "ThirstForPower: " + thirstForPower;
+    }
+    public int featuresValue() {
+        return trickery + determination + ambition + resourcefulness + thirstForPower;
+    }
+    public void compare(Slytherin student) {
+        int sum1 = featuresValue();
+        int sum2 = student.featuresValue();
+        if (sum1 > sum2) {
+            System.out.println(getName() + " " + getSurname() + " лучший Слизеринец, чем "
+                    + student.getName() + " " + student.getSurname());
+        } else if (sum2 > sum1) {
+            System.out.println(student.getName() + " " + student.getSurname() + " лучший Слизеринец, чем "
+                    + getName() + " " + getSurname());
+        } else {
+            System.out.println("Студенты равны");
+        }
+    }
 }
